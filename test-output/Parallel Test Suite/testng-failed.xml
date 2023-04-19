@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Failed suite [Parallel Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="methods" name="Parallel Test1(failed)">
+    <classes>
+      <class name="GenericUtility.ClickOnFriendsTest">
+        <methods>
+          <include name="Close_Browser"/>
+          <include name="Launch_database"/>
+          <include name="Friends"/>
+          <include name="login"/>
+          <include name="Launch_Browser"/>
+          <include name="logout"/>
+          <include name="close_database"/>
+        </methods>
+      </class> <!-- GenericUtility.ClickOnFriendsTest -->
+    </classes>
+  </test> <!-- Parallel Test1(failed) -->
+  <test thread-count="2" parallel="methods" name="Parallel Test2(failed)">
+    <classes>
+      <class name="GenericUtility.ClickOnReelsTest">
+        <methods>
+          <include name="Close_Browser"/>
+          <include name="Launch_database"/>
+          <include name="Reels"/>
+          <include name="login"/>
+          <include name="Launch_Browser"/>
+          <include name="logout"/>
+          <include name="close_database"/>
+        </methods>
+      </class> <!-- GenericUtility.ClickOnReelsTest -->
+    </classes>
+  </test> <!-- Parallel Test2(failed) -->
+</suite> <!-- Failed suite [Parallel Test Suite] -->
