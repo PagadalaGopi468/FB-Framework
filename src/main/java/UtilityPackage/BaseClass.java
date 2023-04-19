@@ -30,12 +30,12 @@ public class BaseClass {
 		System.out.println("Database is Launched....!!!");
 
 	}
-	@Parameters("browser")
+	//@Parameters("browser")
 	//@BeforeTest
 	@BeforeClass(groups = {"Smoke","Regression"})
-	public void Launch_Browser(String browser) throws Exception
+	public void Launch_Browser(/*String browser*/) throws Exception
 	{
-		//String browser=p.ReaddataFromProperty("Browser");
+		String browser=p.ReaddataFromProperty("Browser");
 		String url=p.ReaddataFromProperty("URL");
 
 		if(browser.equalsIgnoreCase("Chrome"))
