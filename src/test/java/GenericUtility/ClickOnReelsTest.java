@@ -7,7 +7,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import UtilityPackage.BaseClass;
-//@Listeners(UtilityPackage.ListnerImplementationClass.class)
+@Listeners(UtilityPackage.ListnerImplementationClass.class)
 public class ClickOnReelsTest extends BaseClass{
 @Test(groups = "Smoke")
 	public void Reels()

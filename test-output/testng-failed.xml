@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [Test Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="UtilityPackage.ListnerImplementationClass"/>
-  </listeners>
-  <test thread-count="2" parallel="tests" name="EdgeTest(failed)">
-    <parameter name="browser" value="Chrome"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GenericUtility.ClickOnReelsTest">
+      <class name="GenericUtility.ActitimeLogin">
         <methods>
-          <include name="Close_Browser"/>
-          <include name="Launch_database"/>
-          <include name="Reels"/>
-          <include name="login"/>
-          <include name="Launch_Browser"/>
-          <include name="logout"/>
-          <include name="close_database"/>
+          <include name="login" invocation-numbers="1"/>
         </methods>
-      </class> <!-- GenericUtility.ClickOnReelsTest -->
+      </class> <!-- GenericUtility.ActitimeLogin -->
     </classes>
-  </test> <!-- EdgeTest(failed) -->
-</suite> <!-- Failed suite [Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
