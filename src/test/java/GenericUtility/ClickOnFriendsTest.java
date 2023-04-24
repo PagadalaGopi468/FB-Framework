@@ -1,6 +1,7 @@
 package GenericUtility;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import org.openqa.selenium.By;
 import org.testng.Reporter;
 import org.testng.annotations.Listeners;
