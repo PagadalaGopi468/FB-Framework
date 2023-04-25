@@ -51,12 +51,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>D:\Eclipse\project2\testng_CrossBrowserExecution.xml</span>
+                    <span>D:\Eclipse\project2\testng_ParallelExecution.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">3 tests</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -112,6 +112,11 @@
                         <a href="#" panel-name="suite-Suite" title="GenericUtility.ClickOnReelsTest" class="method navigator-link" hash-for-method="Reels">Reels</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="UtilityPackage.demo1" class="method navigator-link" hash-for-method="demo2">demo2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -124,6 +129,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">UtilityPackage.demo1</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="demo2">
+                  </a> <!-- demo2 -->
+                  <span class="method-name">demo2</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -157,25 +177,28 @@
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">D:\Eclipse\project2\testng_CrossBrowserExecution.xml</span>
+            <span class="header-content">D:\Eclipse\project2\testng_ParallelExecution.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Test1&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;Chrome&quot;/&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;GenericUtility.ClickOnReelsTest&quot;/&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test1 --&gt;
-  &lt;test thread-count=&quot;2&quot; parallel=&quot;tests&quot; name=&quot;Test2&quot;&gt;
-    &lt;parameter name=&quot;browser&quot; value=&quot;Edge&quot;/&gt;
+&lt;suite parallel=&quot;tests&quot; name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Test1&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;GenericUtility.ClickOnFriendsTest&quot;/&gt;
     &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test1 --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Test2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;GenericUtility.ClickOnReelsTest&quot;/&gt;
+    &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test2 --&gt;
+  &lt;test thread-count=&quot;5&quot; parallel=&quot;tests&quot; name=&quot;Test3&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;UtilityPackage.demo1&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test3 --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -191,6 +214,9 @@
               </li>
               <li>
                 <span class="test-name">Test2 (1 class)</span>
+              </li>
+              <li>
+                <span class="test-name">Test3 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -228,20 +254,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Friends')
-data.setCell(0, 2, 'GenericUtility.ClickOnFriendsTest')
-data.setCell(0, 3, 6910);
+data.setCell(0, 1, 'Reels')
+data.setCell(0, 2, 'GenericUtility.ClickOnReelsTest')
+data.setCell(0, 3, 4994);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Reels')
-data.setCell(1, 2, 'GenericUtility.ClickOnReelsTest')
-data.setCell(1, 3, 6511);
+data.setCell(1, 1, 'Friends')
+data.setCell(1, 2, 'GenericUtility.ClickOnFriendsTest')
+data.setCell(1, 3, 4737);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'demo2')
+data.setCell(2, 2, 'UtilityPackage.demo1')
+data.setCell(2, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 17 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -279,72 +309,113 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">GenericUtility.ClickOnFriendsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">UtilityPackage.demo1</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">Launch_database</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">GenericUtility.ClickOnReelsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">Launch_Browser(Chrome)</span>
-                <span class="method-start">246 ms</span>
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">34 ms</span>
               </div> <!-- configuration-class before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">GenericUtility.ClickOnFriendsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">Launch_Browser(Edge)</span>
-                <span class="method-start">246 ms</span>
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">312 ms</span>
               </div> <!-- configuration-class before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">GenericUtility.ClickOnReelsTest</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">login</span>
-                <span class="method-start">2611 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">Reels</span>
-                <span class="method-start">2811 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-class before">
+                <span class="method-name">Launch_Browser</span>
+                <span class="method-start">313 ms</span>
+              </div> <!-- configuration-class before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">GenericUtility.ClickOnFriendsTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">5884 ms</span>
+                <span class="method-start">3752 ms</span>
               </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">UtilityPackage.demo1</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">3761 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">GenericUtility.ClickOnReelsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">3784 ms</span>
+              </div> <!-- configuration-method before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">GenericUtility.ClickOnFriendsTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">Friends</span>
-                <span class="method-start">6101 ms</span>
+                <span class="method-start">4003 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
-              <div class="chronological-class-name">GenericUtility.ClickOnReelsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">UtilityPackage.demo1</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">demo2</span>
+                <span class="method-start">4032 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">logout</span>
-                <span class="method-start">9325 ms</span>
+                <span class="method-start">4035 ms</span>
               </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">Close_Browser</span>
-                <span class="method-start">12852 ms</span>
-              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">GenericUtility.ClickOnReelsTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Reels</span>
+                <span class="method-start">4105 ms</span>
+              </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">GenericUtility.ClickOnFriendsTest</div> <!-- chronological-class-name -->
               <div class="configuration-method after">
                 <span class="method-name">logout</span>
-                <span class="method-start">13012 ms</span>
+                <span class="method-start">8741 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">GenericUtility.ClickOnReelsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method after">
+                <span class="method-name">logout</span>
+                <span class="method-start">9101 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">Close_Browser</span>
-                <span class="method-start">17005 ms</span>
+                <span class="method-start">13220 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">UtilityPackage.demo1</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">13504 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">GenericUtility.ClickOnFriendsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class after">
+                <span class="method-name">Close_Browser</span>
+                <span class="method-start">13888 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">UtilityPackage.demo1</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">close_database</span>
-                <span class="method-start">17319 ms</span>
+                <span class="method-start">14510 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
