@@ -3,13 +3,19 @@
 <suite parallel="tests" name="Suite">
   <test thread-count="5" parallel="tests" name="Test1">
     <classes>
-      <class name="GenericUtility.ClickOnReelsTest"/>
+     <class name="GenericUtility.ClickOnFriendsTest"/>
     </classes>
   </test> <!-- Test -->
   
   <test thread-count="5" parallel="tests" name="Test2">
     <classes>
-      <class name="GenericUtility.ClickOnFriendsTest"/>
+      <class name="GenericUtility.ClickOnReelsTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+    <test thread-count="5" parallel="tests" name="Test3">
+    <classes>
+      <class name="UtilityPackage.demo1"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

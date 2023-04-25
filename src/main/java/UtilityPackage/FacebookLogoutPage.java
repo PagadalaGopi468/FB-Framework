@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class FacebookLogoutPage {
 
-	@FindBy(xpath = "//div[@class='x78zum5 x1n2onr6']")
+	@FindBy(xpath = "//*[name()='g' and contains(@mask,'url(#:R6km')]//*[name()='image' and contains(@x,'0')]")
 	private WebElement btn;
 	
 	@FindBy(xpath = "//span[text()='Log Out']")

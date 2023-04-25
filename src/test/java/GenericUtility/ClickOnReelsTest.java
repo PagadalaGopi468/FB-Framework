@@ -13,7 +13,7 @@ public class ClickOnReelsTest extends BaseClass{
 @Test(groups = "Smoke")
 	public void Reels()
 	{
-		driver.findElement(By.xpath("//a[@href='/watch/?ref=tab']")).click();
+		driver.findElement(By.xpath("//a[@aria-label='Watch']")).click();
 		Reporter.log("Click on Reels Successfully..!!!");
 
 	}

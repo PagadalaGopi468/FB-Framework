@@ -34,7 +34,7 @@ public class ListnerImplementationClass implements ITestListener{
 		String ScreenShotName =MethodName+" "+ w.getsystemDateFormat();
 		System.out.println(ScreenShotName);
 		try {
-			String path = w.screenshot(BaseClass.driver, ScreenShotName);
+			String path = w.screenshot(BaseClass.sdriver, ScreenShotName);
 			test.addScreenCaptureFromPath(path);
 		} catch (Exception e) {
 			

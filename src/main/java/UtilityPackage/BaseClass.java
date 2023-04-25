@@ -21,7 +21,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public static WebDriver driver;
+	public WebDriver driver;
+	public static WebDriver sdriver;
 	PropertyFile p=new PropertyFile();
 
 	@BeforeSuite(groups = {"Smoke","Regression"})
@@ -41,10 +42,11 @@ public class BaseClass {
 		if(browser.equalsIgnoreCase("Chrome"))
 		{
 			//WebDriverManager.chromedriver().setup();
-			System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
 			ChromeOptions o=new ChromeOptions();
 			o.addArguments("--disable-notifications");
 			driver=new ChromeDriver(o);
+			sdriver=driver;
 
 		}
 		else if(browser.equalsIgnoreCase("Edge"))
@@ -53,7 +55,7 @@ public class BaseClass {
 			EdgeOptions o=new EdgeOptions();
 			o.addArguments("--disable-notifications");
 			driver=new EdgeDriver(o);
-
+			sdriver=driver;
 		}
 		else
 		{
