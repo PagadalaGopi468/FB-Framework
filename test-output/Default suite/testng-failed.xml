@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GenericUtility.ActitimeLogin">
+      <class name="GenericUtility.ClickOnFriendsTest">
         <methods>
-          <include name="login" invocation-numbers="1"/>
+          <include name="Close_Browser"/>
+          <include name="Launch_database"/>
+          <include name="Friends"/>
+          <include name="login"/>
+          <include name="Launch_Browser"/>
+          <include name="logout"/>
+          <include name="close_database"/>
         </methods>
-      </class> <!-- GenericUtility.ActitimeLogin -->
+      </class> <!-- GenericUtility.ClickOnFriendsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

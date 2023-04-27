@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="Test2(failed)">
-    <classes>
-      <class name="GenericUtility.ClickOnReelsTest">
-        <methods>
-          <include name="Close_Browser"/>
-          <include name="Launch_database"/>
-          <include name="Reels"/>
-          <include name="login"/>
-          <include name="Launch_Browser"/>
-          <include name="logout"/>
-          <include name="close_database"/>
-        </methods>
-      </class> <!-- GenericUtility.ClickOnReelsTest -->
-    </classes>
-  </test> <!-- Test2(failed) -->
-  <test thread-count="5" parallel="tests" name="Test1(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="GenericUtility.ClickOnFriendsTest">
         <methods>
@@ -30,5 +15,5 @@
         </methods>
       </class> <!-- GenericUtility.ClickOnFriendsTest -->
     </classes>
-  </test> <!-- Test1(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
